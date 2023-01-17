@@ -1,0 +1,54 @@
+# Reading C:/tools/common/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do SimpleDigitalFilters_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/tools/common/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog {C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:27:19 on Jul 28,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog" C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv 
+# -- Compiling module exponential_averager_filter
+# 
+# Top level modules:
+# 	exponential_averager_filter
+# End time: 11:27:19 on Jul 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog {C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:27:19 on Jul 28,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog" C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv 
+# -- Compiling module exponential_averager_filter_tb
+# 
+# Top level modules:
+# 	exponential_averager_filter_tb
+# End time: 11:27:19 on Jul 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  exponential_averager_filter_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" exponential_averager_filter_tb 
+# Start time: 11:27:19 on Jul 28,2022
+# Loading sv_std.std
+# Loading work.exponential_averager_filter_tb
+# Loading work.exponential_averager_filter
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Simulation starts ...
+# ** Note: $stop    : C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv(34)
+#    Time: 50000020 ns  Iteration: 0  Instance: /exponential_averager_filter_tb
+# Break in NamedBeginStat reset_generation_process at C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv line 34
+# End time: 11:30:06 on Jul 28,2022, Elapsed time: 0:02:47
+# Errors: 0, Warnings: 0

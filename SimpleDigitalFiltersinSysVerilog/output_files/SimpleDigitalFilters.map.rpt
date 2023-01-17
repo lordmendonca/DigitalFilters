@@ -1,0 +1,570 @@
+Analysis & Synthesis report for SimpleDigitalFilters
+Thu Jul 28 11:22:53 2022
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for altsyncram:rom_memory_rtl_0|altsyncram_ggg1:auto_generated
+ 15. Parameter Settings for Inferred Entity Instance: altsyncram:rom_memory_rtl_0
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Jul 28 11:22:53 2022       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; SimpleDigitalFilters                        ;
+; Top-level Entity Name           ; exponential_averager_filter                 ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 35                                          ;
+; Total pins                      ; 34                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 4,096                                       ;
+; Total DSP Blocks                ; 2                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                        ;
++---------------------------------------------------------------------------------+-----------------------------+----------------------+
+; Option                                                                          ; Setting                     ; Default Value        ;
++---------------------------------------------------------------------------------+-----------------------------+----------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6              ;                      ;
+; Top-level entity name                                                           ; exponential_averager_filter ; SimpleDigitalFilters ;
+; Family name                                                                     ; Cyclone V                   ; Cyclone V            ;
+; Use smart compilation                                                           ; Off                         ; Off                  ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                          ; On                   ;
+; Enable compact report table                                                     ; Off                         ; Off                  ;
+; Restructure Multiplexers                                                        ; Auto                        ; Auto                 ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                         ; Off                  ;
+; Create Debugging Nodes for IP Cores                                             ; Off                         ; Off                  ;
+; Preserve fewer node names                                                       ; On                          ; On                   ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                      ; Enable               ;
+; Verilog Version                                                                 ; Verilog_2001                ; Verilog_2001         ;
+; VHDL Version                                                                    ; VHDL_1993                   ; VHDL_1993            ;
+; State Machine Processing                                                        ; Auto                        ; Auto                 ;
+; Safe State Machine                                                              ; Off                         ; Off                  ;
+; Extract Verilog State Machines                                                  ; On                          ; On                   ;
+; Extract VHDL State Machines                                                     ; On                          ; On                   ;
+; Ignore Verilog initial constructs                                               ; Off                         ; Off                  ;
+; Iteration limit for constant Verilog loops                                      ; 5000                        ; 5000                 ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                         ; 250                  ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                          ; On                   ;
+; Infer RAMs from Raw Logic                                                       ; On                          ; On                   ;
+; Parallel Synthesis                                                              ; On                          ; On                   ;
+; DSP Block Balancing                                                             ; Auto                        ; Auto                 ;
+; NOT Gate Push-Back                                                              ; On                          ; On                   ;
+; Power-Up Don't Care                                                             ; On                          ; On                   ;
+; Remove Redundant Logic Cells                                                    ; Off                         ; Off                  ;
+; Remove Duplicate Registers                                                      ; On                          ; On                   ;
+; Ignore CARRY Buffers                                                            ; Off                         ; Off                  ;
+; Ignore CASCADE Buffers                                                          ; Off                         ; Off                  ;
+; Ignore GLOBAL Buffers                                                           ; Off                         ; Off                  ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                         ; Off                  ;
+; Ignore LCELL Buffers                                                            ; Off                         ; Off                  ;
+; Ignore SOFT Buffers                                                             ; On                          ; On                   ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                         ; Off                  ;
+; Optimization Technique                                                          ; Balanced                    ; Balanced             ;
+; Carry Chain Length                                                              ; 70                          ; 70                   ;
+; Auto Carry Chains                                                               ; On                          ; On                   ;
+; Auto Open-Drain Pins                                                            ; On                          ; On                   ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                         ; Off                  ;
+; Auto ROM Replacement                                                            ; On                          ; On                   ;
+; Auto RAM Replacement                                                            ; On                          ; On                   ;
+; Auto DSP Block Replacement                                                      ; On                          ; On                   ;
+; Auto Shift Register Replacement                                                 ; Auto                        ; Auto                 ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                        ; Auto                 ;
+; Auto Clock Enable Replacement                                                   ; On                          ; On                   ;
+; Strict RAM Replacement                                                          ; Off                         ; Off                  ;
+; Allow Synchronous Control Signals                                               ; On                          ; On                   ;
+; Force Use of Synchronous Clear Signals                                          ; Off                         ; Off                  ;
+; Auto Resource Sharing                                                           ; Off                         ; Off                  ;
+; Allow Any RAM Size For Recognition                                              ; Off                         ; Off                  ;
+; Allow Any ROM Size For Recognition                                              ; Off                         ; Off                  ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                         ; Off                  ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                          ; On                   ;
+; Ignore translate_off and synthesis_off directives                               ; Off                         ; Off                  ;
+; Timing-Driven Synthesis                                                         ; On                          ; On                   ;
+; Report Parameter Settings                                                       ; On                          ; On                   ;
+; Report Source Assignments                                                       ; On                          ; On                   ;
+; Report Connectivity Checks                                                      ; On                          ; On                   ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                         ; Off                  ;
+; Synchronization Register Chain Length                                           ; 3                           ; 3                    ;
+; Power Optimization During Synthesis                                             ; Normal compilation          ; Normal compilation   ;
+; HDL message level                                                               ; Level2                      ; Level2               ;
+; Suppress Register Optimization Related Messages                                 ; Off                         ; Off                  ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                        ; 5000                 ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                        ; 5000                 ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                         ; 100                  ;
+; Clock MUX Protection                                                            ; On                          ; On                   ;
+; Auto Gated Clock Conversion                                                     ; Off                         ; Off                  ;
+; Block Design Naming                                                             ; Auto                        ; Auto                 ;
+; SDC constraint protection                                                       ; Off                         ; Off                  ;
+; Synthesis Effort                                                                ; Auto                        ; Auto                 ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                          ; On                   ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                         ; Off                  ;
+; Analysis & Synthesis Message Level                                              ; Medium                      ; Medium               ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                        ; Auto                 ;
+; Resource Aware Inference For Block RAM                                          ; On                          ; On                   ;
+; Automatic Parallel Synthesis                                                    ; On                          ; On                   ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                         ; Off                  ;
++---------------------------------------------------------------------------------+-----------------------------+----------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                                          ;
++---------------------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                          ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                                    ; Library ;
++---------------------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; exponential_averager_filter.sv                                            ; yes             ; User SystemVerilog HDL File                           ; C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv                                            ;         ;
+; noisy_sine_0_360_16bit_256.txt                                            ; yes             ; Auto-Found File                                       ; C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/noisy_sine_0_360_16bit_256.txt                                            ;         ;
+; altsyncram.tdf                                                            ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                                              ;         ;
+; stratix_ram_block.inc                                                     ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                       ;         ;
+; lpm_mux.inc                                                               ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                 ;         ;
+; lpm_decode.inc                                                            ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                                              ;         ;
+; aglobal181.inc                                                            ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                                              ;         ;
+; a_rdenreg.inc                                                             ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                               ;         ;
+; altrom.inc                                                                ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                                                                  ;         ;
+; altram.inc                                                                ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                                                                  ;         ;
+; altdpram.inc                                                              ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                                                                ;         ;
+; db/altsyncram_ggg1.tdf                                                    ; yes             ; Auto-Generated Megafunction                           ; C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/db/altsyncram_ggg1.tdf                                                    ;         ;
+; db/simpledigitalfilters.ram0_exponential_averager_filter_92858864.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/db/simpledigitalfilters.ram0_exponential_averager_filter_92858864.hdl.mif ;         ;
+; lpm_divide.tdf                                                            ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                              ;         ;
+; abs_divider.inc                                                           ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc                                                             ;         ;
+; sign_div_unsign.inc                                                       ; yes             ; Megafunction                                          ; c:/tools/common/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                         ;         ;
+; db/lpm_divide_25m.tdf                                                     ; yes             ; Auto-Generated Megafunction                           ; C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/db/lpm_divide_25m.tdf                                                     ;         ;
+; db/sign_div_unsign_5nh.tdf                                                ; yes             ; Auto-Generated Megafunction                           ; C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/db/sign_div_unsign_5nh.tdf                                                ;         ;
+; db/alt_u_div_g2f.tdf                                                      ; yes             ; Auto-Generated Megafunction                           ; C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/db/alt_u_div_g2f.tdf                                                      ;         ;
++---------------------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 57        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 110       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 4         ;
+;     -- 5 input functions                    ; 4         ;
+;     -- 4 input functions                    ; 10        ;
+;     -- <=3 input functions                  ; 92        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 35        ;
+;                                             ;           ;
+; I/O pins                                    ; 34        ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 4096      ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 2         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 51        ;
+; Total fan-out                               ; 675       ;
+; Average fan-out                             ; 2.92      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name                 ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; |exponential_averager_filter           ; 110 (38)            ; 35 (35)                   ; 4096              ; 2          ; 34   ; 0            ; |exponential_averager_filter                                                                                                 ; exponential_averager_filter ; work         ;
+;    |altsyncram:rom_memory_rtl_0|       ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |exponential_averager_filter|altsyncram:rom_memory_rtl_0                                                                     ; altsyncram                  ; work         ;
+;       |altsyncram_ggg1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |exponential_averager_filter|altsyncram:rom_memory_rtl_0|altsyncram_ggg1:auto_generated                                      ; altsyncram_ggg1             ; work         ;
+;    |lpm_divide:Mod0|                   ; 72 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |exponential_averager_filter|lpm_divide:Mod0                                                                                 ; lpm_divide                  ; work         ;
+;       |lpm_divide_25m:auto_generated|  ; 72 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |exponential_averager_filter|lpm_divide:Mod0|lpm_divide_25m:auto_generated                                                   ; lpm_divide_25m              ; work         ;
+;          |sign_div_unsign_5nh:divider| ; 72 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |exponential_averager_filter|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_5nh:divider                       ; sign_div_unsign_5nh         ; work         ;
+;             |alt_u_div_g2f:divider|    ; 72 (72)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |exponential_averager_filter|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_g2f:divider ; alt_u_div_g2f               ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                   ;
++-----------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------------------------------------------------------------------------+
+; Name                                                                  ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                                                       ;
++-----------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------------------------------------------------------------------------+
+; altsyncram:rom_memory_rtl_0|altsyncram_ggg1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 16           ; --           ; --           ; 4096 ; db/SimpleDigitalFilters.ram0_exponential_averager_filter_92858864.hdl.mif ;
++-----------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary    ;
++-----------------------------------+-------------+
+; Statistic                         ; Number Used ;
++-----------------------------------+-------------+
+; Two Independent 18x18             ; 2           ;
+; Total number of DSP blocks        ; 2           ;
+;                                   ;             ;
+; Fixed Point Mixed Sign Multiplier ; 2           ;
++-----------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; time_base_counter[11]                 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 35    ;
+; Number of registers using Synchronous Clear  ; 35    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 24    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------+
+; Registers Packed Into Inferred Megafunctions ;
++---------------+------------------+-----------+
+; Register Name ; Megafunction     ; Type      ;
++---------------+------------------+-----------+
+; q_rom[0..15]  ; rom_memory_rtl_0 ; RAM       ;
++---------------+------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |exponential_averager_filter|q_delayed[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Source assignments for altsyncram:rom_memory_rtl_0|altsyncram_ggg1:auto_generated ;
++---------------------------------+--------------------+------+---------------------+
+; Assignment                      ; Value              ; From ; To                  ;
++---------------------------------+--------------------+------+---------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                   ;
++---------------------------------+--------------------+------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: altsyncram:rom_memory_rtl_0                                                    ;
++------------------------------------+---------------------------------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                                                     ; Type           ;
++------------------------------------+---------------------------------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                                         ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                                        ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                                       ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                                        ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                                       ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                                         ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                                                       ; Untyped        ;
+; WIDTH_A                            ; 16                                                                        ; Untyped        ;
+; WIDTHAD_A                          ; 8                                                                         ; Untyped        ;
+; NUMWORDS_A                         ; 256                                                                       ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                                              ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                                                      ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                                                      ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                                                      ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                                                      ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                                                      ; Untyped        ;
+; WIDTH_B                            ; 1                                                                         ; Untyped        ;
+; WIDTHAD_B                          ; 1                                                                         ; Untyped        ;
+; NUMWORDS_B                         ; 1                                                                         ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                                                    ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                                    ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                                                    ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                                                    ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                                              ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                                                    ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                                                      ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                                                      ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                                                      ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                                                      ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                                                      ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                                                      ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                                         ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                                         ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                                      ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                                         ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                 ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                                      ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                                      ; Untyped        ;
+; INIT_FILE                          ; db/SimpleDigitalFilters.ram0_exponential_averager_filter_92858864.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                                                    ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                                         ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                                                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                                    ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                                                    ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                                    ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                                           ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                                           ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                                                     ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                                     ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                                                         ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                                                                 ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_ggg1                                                           ; Untyped        ;
++------------------------------------+---------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                ;
+; LPM_WIDTHD             ; 11             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_25m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                        ;
++-------------------------------------------+-----------------------------+
+; Name                                      ; Value                       ;
++-------------------------------------------+-----------------------------+
+; Number of entity instances                ; 1                           ;
+; Entity Instance                           ; altsyncram:rom_memory_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                         ;
+;     -- WIDTH_A                            ; 16                          ;
+;     -- NUMWORDS_A                         ; 256                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                ;
+;     -- WIDTH_B                            ; 1                           ;
+;     -- NUMWORDS_B                         ; 1                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                      ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                        ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                   ;
++-------------------------------------------+-----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 35                          ;
+;     ENA SCLR          ; 24                          ;
+;     SCLR              ; 11                          ;
+; arriav_lcell_comb     ; 110                         ;
+;     arith             ; 73                          ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 34                          ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 5                           ;
+;     normal            ; 37                          ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 4                           ;
+; arriav_mac            ; 2                           ;
+; boundary_port         ; 34                          ;
+; stratixv_ram_block    ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 10.10                       ;
+; Average LUT depth     ; 5.56                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu Jul 28 11:22:38 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SimpleDigitalFilters -c SimpleDigitalFilters
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file recursive_oscillator_tb.sv
+    Info (12023): Found entity 1: recursive_oscillator_tb File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/recursive_oscillator_tb.sv Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file recursive_oscillator.sv
+    Info (12023): Found entity 1: recursive_oscillator File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/recursive_oscillator.sv Line: 1
+Warning (10274): Verilog HDL macro warning at digital_resonator_tb.sv(5): overriding existing definition for macro "RESET_PERIOD", which was defined in "recursive_oscillator_tb.sv", line 5 File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/digital_resonator_tb.sv Line: 5
+Warning (10274): Verilog HDL macro warning at digital_resonator_tb.sv(6): overriding existing definition for macro "SIM_DURATION", which was defined in "recursive_oscillator_tb.sv", line 7 File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/digital_resonator_tb.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file digital_resonator_tb.sv
+    Info (12023): Found entity 1: digital_resonator_tb File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/digital_resonator_tb.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file digital_resonator.sv
+    Info (12023): Found entity 1: digital_resonator File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/digital_resonator.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file recursive_ma_fir.sv
+    Info (12023): Found entity 1: recursive_ma_fir File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/recursive_ma_fir.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file exponential_averager_filter.sv
+    Info (12023): Found entity 1: exponential_averager_filter File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv Line: 2
+Warning (10274): Verilog HDL macro warning at exponential_averager_filter_tb.sv(6): overriding existing definition for macro "RESET_PERIOD", which was defined in "recursive_oscillator_tb.sv", line 5 File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv Line: 6
+Warning (10274): Verilog HDL macro warning at exponential_averager_filter_tb.sv(7): overriding existing definition for macro "SIM_DURATION", which was defined in "recursive_oscillator_tb.sv", line 7 File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file exponential_averager_filter_tb.sv
+    Info (12023): Found entity 1: exponential_averager_filter_tb File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv Line: 8
+Warning (10274): Verilog HDL macro warning at fir_8_tap_ma_filter_tb.sv(7): overriding existing definition for macro "RESET_PERIOD", which was defined in "recursive_oscillator_tb.sv", line 5 File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/fir_8_tap_ma_filter_tb.sv Line: 7
+Warning (10274): Verilog HDL macro warning at fir_8_tap_ma_filter_tb.sv(9): overriding existing definition for macro "SIM_DURATION", which was defined in "recursive_oscillator_tb.sv", line 7 File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/fir_8_tap_ma_filter_tb.sv Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file fir_8_tap_ma_filter_tb.sv
+    Info (12023): Found entity 1: fir_8_tap_ma_filter_tb File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/fir_8_tap_ma_filter_tb.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file fir_8_tap_ma_filter.sv
+    Info (12023): Found entity 1: fir_8_tap_ma_filter File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/fir_8_tap_ma_filter.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file recursive_ma_fir_tb.sv
+    Info (12023): Found entity 1: recursive_ma_fir_tb File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/recursive_ma_fir_tb.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file exp_avg.sv
+    Info (12023): Found entity 1: exp_avg File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exp_avg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file exp_avg_tb.sv
+    Info (12023): Found entity 1: exp_avg_tb File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exp_avg_tb.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file filters.sv
+    Info (12023): Found entity 1: filters File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/filters.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file filters_tb.sv
+    Info (12023): Found entity 1: filters_tb File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/filters_tb.sv Line: 10
+Info (12127): Elaborating entity "exponential_averager_filter" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at exponential_averager_filter.sv(23): truncated value with size 32 to match size of target (12) File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv Line: 23
+Warning (10030): Net "rom_memory.data_a" at exponential_averager_filter.sv(39) has no driver or initial value, using a default initial value '0' File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv Line: 39
+Warning (10030): Net "rom_memory.waddr_a" at exponential_averager_filter.sv(39) has no driver or initial value, using a default initial value '0' File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv Line: 39
+Warning (10030): Net "rom_memory.we_a" at exponential_averager_filter.sv(39) has no driver or initial value, using a default initial value '0' File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv Line: 39
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "rom_memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/SimpleDigitalFilters.ram0_exponential_averager_filter_92858864.hdl.mif
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv Line: 23
+Info (12130): Elaborated megafunction instantiation "altsyncram:rom_memory_rtl_0"
+Info (12133): Instantiated megafunction "altsyncram:rom_memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/SimpleDigitalFilters.ram0_exponential_averager_filter_92858864.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ggg1.tdf
+    Info (12023): Found entity 1: altsyncram_ggg1 File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/db/altsyncram_ggg1.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv Line: 23
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv Line: 23
+    Info (12134): Parameter "LPM_WIDTHN" = "13"
+    Info (12134): Parameter "LPM_WIDTHD" = "11"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_25m.tdf
+    Info (12023): Found entity 1: lpm_divide_25m File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/db/lpm_divide_25m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_5nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_5nh File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/db/sign_div_unsign_5nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g2f.tdf
+    Info (12023): Found entity 1: alt_u_div_g2f File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/db/alt_u_div_g2f.tdf Line: 22
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 178 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 126 logic cells
+    Info (21064): Implemented 16 RAM segments
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4834 megabytes
+    Info: Processing ended: Thu Jul 28 11:22:53 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:27
+
+

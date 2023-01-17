@@ -1,0 +1,145 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "q_sine[0]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[1]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[2]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[3]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[4]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[5]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[6]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[7]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[8]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[9]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[10]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[11]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[12]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[13]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[14]",
+					"strict" : false
+				},
+				{
+					"name" : "q_sine[15]",
+					"strict" : false
+				},
+				{
+					"name" : "q[0]",
+					"strict" : false
+				},
+				{
+					"name" : "q[1]",
+					"strict" : false
+				},
+				{
+					"name" : "q[2]",
+					"strict" : false
+				},
+				{
+					"name" : "q[3]",
+					"strict" : false
+				},
+				{
+					"name" : "q[4]",
+					"strict" : false
+				},
+				{
+					"name" : "q[5]",
+					"strict" : false
+				},
+				{
+					"name" : "q[6]",
+					"strict" : false
+				},
+				{
+					"name" : "q[7]",
+					"strict" : false
+				},
+				{
+					"name" : "q[8]",
+					"strict" : false
+				},
+				{
+					"name" : "q[9]",
+					"strict" : false
+				},
+				{
+					"name" : "q[10]",
+					"strict" : false
+				},
+				{
+					"name" : "q[11]",
+					"strict" : false
+				},
+				{
+					"name" : "q[12]",
+					"strict" : false
+				},
+				{
+					"name" : "q[13]",
+					"strict" : false
+				},
+				{
+					"name" : "q[14]",
+					"strict" : false
+				},
+				{
+					"name" : "q[15]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

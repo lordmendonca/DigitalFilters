@@ -1,0 +1,28 @@
+module exp_avg
+(
+	input logic clk,
+	input logic reset_n,
+	input logic signed [15:0] d,
+	output logic signed [15:0] q,
+	output logic signed [15:0] q_simplified
+);
+
+	localparam signed [15:0] alpha = 16'd
+	localparam signed [15:0] c_alpha = 16'd
+	
+	logic signed [31:0] prod_1, prod_2;
+	
+	logic signed [15:0] del;
+	
+	always_ff@(posedge clk)
+	if(0 == reset_n)
+		del <= 0;
+	else
+		del <= q;
+		
+	assign prod_1 = d * alpha;
+	assign prod_2 = del * c_alpha;
+	
+	assign q = $signed(prod_1[30:15]) + $signed(prod_2[30:15]);
+
+endmodule

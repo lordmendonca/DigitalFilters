@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/simulation/modelsim
+vexponential_averager_filter
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1659000439
+!i10b 1
+!s100 9g;]j8Og4^_FFm`_K?d2I0
+I:f0CigbL@[OXQ@[FW4CJS0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 exponential_averager_filter_sv_unit
+S1
+R0
+w1657566170
+8C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv
+FC:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv
+L0 2
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1659000439.000000
+!s107 C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog|C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog
+Z8 tCvgOpt 0
+vexponential_averager_filter_tb
+R1
+R2
+!i10b 1
+!s100 g:kIUTS;_:eYCIRThBfR?3
+I93KQ`Q;15ECF:dWK_oMBE0
+R3
+!s105 exponential_averager_filter_tb_sv_unit
+S1
+R0
+w1658850437
+8C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv
+FC:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv
+L0 8
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog|C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/exponential_averager_filter_tb.sv|
+!i113 1
+R6
+R7
+R8

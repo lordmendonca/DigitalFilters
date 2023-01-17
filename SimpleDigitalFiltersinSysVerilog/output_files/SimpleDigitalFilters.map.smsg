@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at recursive_ma_fir.sv(9): object "N" differs only in case from object "n" in the same scope File: C:/Jason/EIT/Semester_02/02_ESPS/Lab/SimpleDigitalFiltersinSysVerilog/recursive_ma_fir.sv Line: 9

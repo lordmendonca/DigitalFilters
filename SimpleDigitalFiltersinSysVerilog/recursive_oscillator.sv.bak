@@ -1,0 +1,70 @@
+
+
+module recursive_oscillator(
+	input clk, reset_n,
+	input signed [15:0] d,
+	output signed [15:0] y_sin, y_cos, w_n
+	);
+	
+	
+	localparam SYSTEM_FREQ = 50000000;
+	localparam SAMPLING_FREQ = 96000;
+	localparam TICKS = SYSTEM_FREQ/SAMPLING_FREQ;
+	
+	localparam BITWIDTH = $clog2(TICKS+1);
+	
+	logic [BITWIDTH-1:0] time_base_counter = 0;
+	
+	logic enable;
+	
+	always_ff@(posedge clk)
+		if(reset_n == 1'b0)
+			time_base_counter <= 'd0;
+		else
+			time_base_counter <= (time_base_counter + 'd1) % TICKS;
+			
+	assign enable = (time_base_counter == (TICKS - 1'b1))? 1'b1 : 1'b0;
+	
+	
+	logic signed [15:0] x_n, w_n_1, w_n_2;
+	logic signed [31:0] prod1, prod2, prod3;
+	logic signed [15:0] sum1;
+	
+	
+	always_ff@(posedge clk)
+	begin
+		if(reset_n == 1'b0)
+		begin
+			x_n <= 0;
+			w_n_1 <= 0;
+			w_n_2 <= 0;
+		end
+		else if(enable)
+		begin
+			x_n <= d;
+			w_n_1 <= w_n;
+			w_n_2 <= w_n_1;
+		end
+	end
+	
+	logic signed [15:0] cos_w0 = 16'sb0111111110111011;
+	logic signed [15:0] sin_w0 = 16'sb0000100000101111;
+	
+	
+	assign prod1 = cos_w0 * w_n_1;
+	assign prod2 = prod1 << 1;
+	assign prod3 = sin_w0 * w_n_1;
+	
+	assign sum1 = $signed(prod2[30:15]) - w_n_2;
+	
+	assign w_n = sum1 + x_n;
+	assign y_sin = $signed(prod3[30:15]);
+	assign y_cos = w_n - $signed(prod1[30:15]);
+	
+endmodule
+
+	
+	
+	
+		
+	
